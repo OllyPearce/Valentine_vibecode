@@ -119,7 +119,7 @@ const setup = () => {
       card.innerHTML = `
         <h1>YAY!! 💖 I knew you’d say yes!</h1>
         <p style="margin: 8px 0 0; font-size: 1rem; color: #ff6b8a;">
-          Happy Valentine’s Day 🥺🌹
+          Happy Valentine’s Day 🌹
         </p>
       `;
       triggerHearts();
