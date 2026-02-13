@@ -30,14 +30,15 @@ const setup = () => {
     };
 
     const enableNoButtonDodge = () => {
-      const boundaryRect = boundary.getBoundingClientRect();
-      const noRect = noButton.getBoundingClientRect();
-      const offsetLeft = noRect.left - boundaryRect.left;
-      const offsetTop = noRect.top - boundaryRect.top;
+      const padding = 14;
+      const maxX = Math.max(0, boundary.clientWidth - noButton.offsetWidth);
+      const maxY = Math.max(0, boundary.clientHeight - noButton.offsetHeight);
+      const initialLeft = Math.min(padding, maxX);
+      const initialTop = Math.min(padding, maxY);
 
       noButton.style.position = "absolute";
-      noButton.style.left = `${offsetLeft}px`;
-      noButton.style.top = `${offsetTop}px`;
+      noButton.style.left = `${initialLeft}px`;
+      noButton.style.top = `${initialTop}px`;
       noButton.style.transition = "transform 0.15s ease, left 0.15s ease, top 0.15s ease";
 
       noButton.addEventListener("mouseover", moveNoButton);
